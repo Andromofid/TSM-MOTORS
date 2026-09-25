@@ -1,12 +1,12 @@
-<form method="GET" action="{{ route('motos.index') }}">
+<form method="GET" action="{{ route('motos.index') }}" class="space-y-4">
 
-    <div class="grid gap-4 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
 
         {{-- Search --}}
         <div>
             <label
                 for="q"
-                class="text-xs font-bold uppercase tracking-[0.18em] text-tsm-muted">
+                class="text-[11px] font-extrabold uppercase tracking-[0.2em] text-tsm-yellow">
                 Recherche
             </label>
 
@@ -16,7 +16,7 @@
                 type="search"
                 value="{{ request('q') }}"
                 placeholder="Nom, modèle, mot-clé..."
-                class="mt-2 block w-full rounded-xl border border-tsm-border bg-tsm-dark px-4 py-3 text-sm text-white outline-none transition placeholder:text-tsm-muted focus:border-tsm-yellow focus:ring-2 focus:ring-tsm-yellow/20">
+                class="mt-2 block w-full rounded-2xl border border-white/10 bg-tsm-dark/80 px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/35 focus:border-tsm-yellow focus:ring-2 focus:ring-tsm-yellow/20">
         </div>
 
 
@@ -24,14 +24,14 @@
         <div>
             <label
                 for="brand"
-                class="text-xs font-bold uppercase tracking-[0.18em] text-tsm-muted">
+                class="text-[11px] font-extrabold uppercase tracking-[0.2em] text-tsm-yellow">
                 Marque
             </label>
 
             <select
                 id="brand"
                 name="brand"
-                class="mt-2 block w-full rounded-xl border border-tsm-border bg-tsm-dark px-4 py-3 text-sm text-white outline-none transition focus:border-tsm-yellow focus:ring-2 focus:ring-tsm-yellow/20">
+                class="mt-2 block w-full rounded-2xl border border-white/10 bg-tsm-dark/80 px-4 py-3 text-sm text-white outline-none transition focus:border-tsm-yellow focus:ring-2 focus:ring-tsm-yellow/20">
 
                 <option value="">Toutes</option>
 
@@ -51,14 +51,14 @@
         <div>
             <label
                 for="category"
-                class="text-xs font-bold uppercase tracking-[0.18em] text-tsm-muted">
+                class="text-[11px] font-extrabold uppercase tracking-[0.2em] text-tsm-yellow">
                 Catégorie
             </label>
 
             <select
                 id="category"
                 name="category"
-                class="mt-2 block w-full rounded-xl border border-tsm-border bg-tsm-dark px-4 py-3 text-sm text-white outline-none transition focus:border-tsm-yellow focus:ring-2 focus:ring-tsm-yellow/20">
+                class="mt-2 block w-full rounded-2xl border border-white/10 bg-tsm-dark/80 px-4 py-3 text-sm text-white outline-none transition focus:border-tsm-yellow focus:ring-2 focus:ring-tsm-yellow/20">
 
                 <option value="">Toutes</option>
 
@@ -78,14 +78,14 @@
         <div>
             <label
                 for="condition"
-                class="text-xs font-bold uppercase tracking-[0.18em] text-tsm-muted">
+                class="text-[11px] font-extrabold uppercase tracking-[0.2em] text-tsm-yellow">
                 Condition
             </label>
 
             <select
                 id="condition"
                 name="condition"
-                class="mt-2 block w-full rounded-xl border border-tsm-border bg-tsm-dark px-4 py-3 text-sm text-white outline-none transition focus:border-tsm-yellow focus:ring-2 focus:ring-tsm-yellow/20">
+                class="mt-2 block w-full rounded-2xl border border-white/10 bg-tsm-dark/80 px-4 py-3 text-sm text-white outline-none transition focus:border-tsm-yellow focus:ring-2 focus:ring-tsm-yellow/20">
 
                 <option value="">Toutes</option>
 
@@ -103,13 +103,13 @@
     </div>
 
 
-    <div class="mt-4 grid gap-4 md:grid-cols-3 lg:grid-cols-[1fr_1fr_1fr_auto]">
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
 
         {{-- Min price --}}
         <div>
             <label
                 for="min_price"
-                class="text-xs font-bold uppercase tracking-[0.18em] text-tsm-muted">
+                class="text-[11px] font-extrabold uppercase tracking-[0.2em] text-tsm-yellow">
                 Prix min
             </label>
 
@@ -120,7 +120,7 @@
                 min="0"
                 value="{{ request('min_price') }}"
                 placeholder="Ex: 20000"
-                class="mt-2 block w-full rounded-xl border border-tsm-border bg-tsm-dark px-4 py-3 text-sm text-white outline-none transition placeholder:text-tsm-muted focus:border-tsm-yellow focus:ring-2 focus:ring-tsm-yellow/20">
+                class="mt-2 block w-full rounded-2xl border border-white/10 bg-tsm-dark/80 px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/35 focus:border-tsm-yellow focus:ring-2 focus:ring-tsm-yellow/20">
         </div>
 
 
@@ -128,7 +128,7 @@
         <div>
             <label
                 for="max_price"
-                class="text-xs font-bold uppercase tracking-[0.18em] text-tsm-muted">
+                class="text-[11px] font-extrabold uppercase tracking-[0.2em] text-tsm-yellow">
                 Prix max
             </label>
 
@@ -139,22 +139,22 @@
                 min="0"
                 value="{{ request('max_price') }}"
                 placeholder="Ex: 120000"
-                class="mt-2 block w-full rounded-xl border border-tsm-border bg-tsm-dark px-4 py-3 text-sm text-white outline-none transition placeholder:text-tsm-muted focus:border-tsm-yellow focus:ring-2 focus:ring-tsm-yellow/20">
+                class="mt-2 block w-full rounded-2xl border border-white/10 bg-tsm-dark/80 px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/35 focus:border-tsm-yellow focus:ring-2 focus:ring-tsm-yellow/20">
         </div>
 
 
         {{-- Sort --}}
-        <div>
+        <div class="sm:col-span-2 lg:col-span-1">
             <label
                 for="sort"
-                class="text-xs font-bold uppercase tracking-[0.18em] text-tsm-muted">
+                class="text-[11px] font-extrabold uppercase tracking-[0.2em] text-tsm-yellow">
                 Trier par
             </label>
 
             <select
                 id="sort"
                 name="sort"
-                class="mt-2 block w-full rounded-xl border border-tsm-border bg-tsm-dark px-4 py-3 text-sm text-white outline-none transition focus:border-tsm-yellow focus:ring-2 focus:ring-tsm-yellow/20">
+                class="mt-2 block w-full rounded-2xl border border-white/10 bg-tsm-dark/80 px-4 py-3 text-sm text-white outline-none transition focus:border-tsm-yellow focus:ring-2 focus:ring-tsm-yellow/20">
 
                 <option value="">Nouveautés</option>
                 <option value="price_asc" @selected(request('sort')==='price_asc' )>
@@ -170,23 +170,23 @@
             </select>
         </div>
 
+    </div>
 
-        {{-- Actions --}}
-        <div class="flex items-end gap-3">
 
-            <button
-                type="submit"
-                class="inline-flex min-h-12 flex-1 items-center justify-center rounded-xl bg-tsm-yellow px-5 py-3 text-sm font-bold text-white transition hover:bg-tsm-gold">
-                Filtrer
-            </button>
+    {{-- Actions --}}
+    <div class="grid gap-3 border-t border-white/10 pt-4 sm:grid-cols-2 lg:grid-cols-1">
 
-            <a
-                href="{{ route('motos.index') }}"
-                class="inline-flex min-h-12 items-center justify-center rounded-xl border border-tsm-border px-5 py-3 text-sm font-semibold text-tsm-muted transition hover:border-tsm-yellow hover:bg-tsm-blue hover:text-white">
-                Reset
-            </a>
+        <button
+            type="submit"
+            class="inline-flex min-h-12 items-center justify-center rounded-full bg-tsm-yellow px-5 py-3 text-sm font-extrabold uppercase tracking-wide text-tsm-dark shadow-lg shadow-tsm-yellow/20 transition hover:bg-tsm-gold">
+            Filtrer
+        </button>
 
-        </div>
+        <a
+            href="{{ route('motos.index') }}"
+            class="inline-flex min-h-12 items-center justify-center rounded-full border border-white/15 px-5 py-3 text-sm font-bold uppercase tracking-wide text-white/70 transition hover:border-tsm-yellow hover:bg-white/5 hover:text-tsm-yellow">
+            Réinitialiser
+        </a>
 
     </div>
 

@@ -383,7 +383,7 @@
 
                 <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                     <a href="{{ route('motos.index') }}" class="group relative min-h-[260px] overflow-hidden rounded-[1.6rem] border border-white/10 bg-tsm-surface">
-                        <img src="{{ asset('images/hero-moto1.png') }}" alt="Vente moto TSM Motors" class="absolute inset-0 h-full w-full object-cover opacity-75 transition duration-500 group-hover:scale-110">
+                        <img src="{{ asset('images/hero-moto.png') }}" alt="Vente moto TSM Motors" class="absolute inset-0 h-full w-full object-cover opacity-75 transition duration-500 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-t from-tsm-dark via-tsm-dark/55 to-transparent"></div>
                         <div class="absolute bottom-0 left-0 p-5">
                             <span class="block h-1 w-10 bg-tsm-yellow"></span>
@@ -413,7 +413,7 @@
                     </a>
 
                     <a id="accessoires" href="{{ route('contact.create') }}" class="group relative min-h-[260px] overflow-hidden rounded-[1.6rem] border border-white/10 bg-tsm-surface">
-                        <img src="{{ asset('images/hero-moto1.png') }}" alt="Accessoires moto TSM Motors" class="absolute inset-0 h-full w-full object-cover opacity-70 transition duration-500 group-hover:scale-110">
+                        <img src="{{ asset('images/hero-moto.png') }}" alt="Accessoires moto TSM Motors" class="absolute inset-0 h-full w-full object-cover opacity-70 transition duration-500 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-t from-tsm-dark via-tsm-dark/60 to-transparent"></div>
                         <div class="absolute bottom-0 left-0 p-5">
                             <span class="block h-1 w-10 bg-tsm-yellow"></span>
@@ -504,7 +504,7 @@
 
         <section class="relative overflow-hidden bg-tsm-dark">
             <div class="absolute inset-0">
-                <img src="{{ asset('images/hero-moto1.png') }}" alt="Expérience Suzuki TSM Motors" class="h-full w-full object-cover opacity-55">
+                <img src="{{ asset('images/hero-moto.png') }}" alt="Expérience Suzuki TSM Motors" class="h-full w-full object-cover opacity-55">
                 <div class="absolute inset-0 bg-gradient-to-r from-tsm-dark via-tsm-navy/85 to-tsm-blue/45"></div>
             </div>
 
@@ -523,61 +523,7 @@
         </section>
     </main>
 
-    <footer class="border-t border-white/10 bg-tsm-dark">
-        <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
-                <div class="lg:col-span-2">
-                    <img src="{{ asset('images/logo.png') }}" alt="TSM Motors Logo" class="h-14 w-auto">
-                    <p class="mt-4 max-w-sm text-sm leading-6 text-white/60">
-                        TSM Motors Agadir, revendeur Suzuki, showroom moto, atelier, location et accessoires.
-                    </p>
-                </div>
-
-                <div>
-                    <h4 class="font-heading text-xl font-extrabold uppercase text-white">Navigation</h4>
-                    <div class="mt-4 flex flex-col gap-2 text-sm text-white/60">
-                        <a href="{{ route('home') }}#home" class="hover:text-tsm-yellow">Accueil</a>
-                        <a href="{{ route('motos.index') }}" class="hover:text-tsm-yellow">Motos</a>
-                        <a href="{{ route('home') }}#services" class="hover:text-tsm-yellow">Services</a>
-                        <a href="{{ route('contact.create') }}" class="hover:text-tsm-yellow">Contact</a>
-                    </div>
-                </div>
-
-                <div>
-                    <h4 class="font-heading text-xl font-extrabold uppercase text-white">Services</h4>
-                    <div class="mt-4 flex flex-col gap-2 text-sm text-white/60">
-                        <a href="{{ route('motos.index') }}" class="hover:text-tsm-yellow">Motos Suzuki</a>
-                        <a href="{{ route('home') }}#services" class="hover:text-tsm-yellow">Atelier</a>
-                        <a href="{{ route('home') }}#location" class="hover:text-tsm-yellow">Location</a>
-                        <a href="{{ route('home') }}#accessoires" class="hover:text-tsm-yellow">Accessoires</a>
-                    </div>
-                </div>
-
-                <div>
-                    <h4 class="font-heading text-xl font-extrabold uppercase text-white">Contact</h4>
-                    <div class="mt-4 space-y-2 text-sm text-white/60">
-                        <p>Agadir, Maroc</p>
-                        <p>+212 6 89 49 75 06<br>+212 6 84 60 25 60</p>
-                        <p>contact@tsmmotors.ma</p>
-                    </div>
-
-                    <div class="mt-4 flex gap-2">
-                        <a href="https://www.instagram.com/tsm_motors_agadir/" target="_blank" class="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-xs font-bold text-white transition hover:border-tsm-yellow hover:bg-tsm-yellow hover:text-tsm-dark">
-                            IG
-                        </a>
-                        <a href="https://web.facebook.com/people/TSM-Motors-Agadir/61584669695694/" target="_blank" class="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-xs font-bold text-white transition hover:border-tsm-yellow hover:bg-tsm-yellow hover:text-tsm-dark">
-                            FB
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mt-8 flex flex-col justify-between gap-3 border-t border-white/10 pt-5 text-xs text-white/45 sm:flex-row">
-                <p>© {{ date('Y') }} TSM Motors Agadir. Tous droits réservés.</p>
-                <p>Agadir, Maroc</p>
-            </div>
-        </div>
-    </footer>
+  <x-footer/>
 
     <script>
         const homeMenuButton = document.getElementById('homeMenuButton');
