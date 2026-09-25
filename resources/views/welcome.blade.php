@@ -9,7 +9,7 @@
 
     <meta
         name="description"
-        content="Découvrez les meilleures motos à Agadir chez TSM Motors. Suzuki, atelier, location et accessoires.">
+        content="Découvrez les motos Suzuki, l'atelier, la location et les accessoires chez TSM Motors Agadir.">
 
     {{-- Fonts --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,116 +35,170 @@
     </style>
 </head>
 
-<body class="bg-tsm-dark text-tsm-light antialiased">
+<body class="bg-tsm-dark font-sans text-white antialiased">
+    <header class="sticky top-0 z-50 border-b border-white/10 bg-tsm-navy/95 shadow-lg shadow-black/10 backdrop-blur-xl">
+        <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+            <a href="{{ route('home') }}" class="flex items-center gap-3">
+                <img src="{{ asset('images/logo.png') }}" alt="TSM Motors Logo" class="h-12 w-auto">
+            </a>
 
-    <x-nav />
+            <nav class="hidden items-center gap-7 text-[13px] font-bold uppercase tracking-[0.16em] text-white/75 lg:flex">
+                <a href="{{ route('home') }}#home" class="relative py-6 text-white after:absolute after:inset-x-0 after:bottom-4 after:h-0.5 after:bg-tsm-yellow">Accueil</a>
+                <a href="{{ route('motos.index') }}" class="py-6 transition hover:text-tsm-yellow">Motos</a>
+                <a href="{{ route('home') }}#accessoires" class="py-6 transition hover:text-tsm-yellow">Accessoires</a>
+                <a href="{{ route('contact.create') }}" class="py-6 transition hover:text-tsm-yellow">Contact</a>
+            </nav>
 
+            <div class="flex items-center gap-3">
+                <a href="{{ route('contact.create') }}" class="hidden rounded-full bg-tsm-yellow px-5 py-2.5 text-sm font-extrabold uppercase tracking-wide text-tsm-dark shadow-lg shadow-tsm-yellow/20 transition hover:bg-tsm-gold md:inline-flex">
+                    Réserver un essai
+                </a>
+
+                <button
+                    id="homeMenuButton"
+                    type="button"
+                    class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white lg:hidden"
+                    aria-label="Ouvrir le menu">
+                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="homeMobileMenu" class="hidden border-t border-white/10 bg-tsm-navy lg:hidden">
+            <nav class="mx-auto grid max-w-7xl grid-cols-2 gap-2 px-4 py-4 text-sm font-bold uppercase tracking-wide text-white/80 sm:px-6">
+                <a href="{{ route('home') }}#home" class="rounded-xl bg-white/5 px-4 py-3 text-white">Accueil</a>
+                <a href="{{ route('motos.index') }}" class="rounded-xl px-4 py-3 hover:bg-white/5">Motos</a>
+                <a href="{{ route('home') }}#accessoires" class="rounded-xl px-4 py-3 hover:bg-white/5">Accessoires</a>
+                <a href="{{ route('contact.create') }}" class="rounded-xl bg-tsm-yellow px-4 py-3 text-tsm-dark">Contact</a>
+            </nav>
+        </div>
+    </header>
 
     <main>
-
-        {{-- ====================================================== --}}
-        {{-- Hero --}}
-        {{-- ====================================================== --}}
-
         <section
             id="home"
-            class="relative overflow-hidden">
+            class="relative isolate overflow-hidden bg-tsm-dark">
 
-            {{-- Background effects --}}
+            {{-- Background image --}}
             <div
-                class="pointer-events-none absolute -right-24 -top-24
-               h-[320px] w-[320px] rounded-full
-               bg-tsm-yellow/10 blur-[100px]
-               sm:h-[420px] sm:w-[420px]
-               lg:h-[600px] lg:w-[600px] lg:blur-[140px]">
+                class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                style="background-image: url('{{ asset('images/Showroom.webp') }}');">
+            </div>
+
+            {{-- Dark overlays --}}
+            <div class="absolute inset-0 bg-tsm-dark/70"></div>
+
+            <div
+                class="absolute inset-0
+               bg-[radial-gradient(circle_at_center,rgba(18,63,131,0.22),transparent_45%)]">
             </div>
 
             <div
-                class="pointer-events-none absolute left-1/2 top-1/2
-               h-[220px] w-[220px] -translate-x-1/2 -translate-y-1/2
-               rounded-full bg-tsm-yellow/5 blur-[90px]
-               sm:h-[300px] sm:w-[300px]
-               lg:h-[400px] lg:w-[400px] lg:blur-[120px]">
+                class="absolute inset-0
+               bg-gradient-to-b
+               from-tsm-dark/35
+               via-tsm-dark/45
+               to-tsm-dark/90">
             </div>
 
-
+            {{-- Main content --}}
             <div
-                class="relative mx-auto grid max-w-7xl items-center
-               gap-10 px-4 py-12
-               sm:px-6 sm:py-16
-               md:grid-cols-2 md:gap-8
-               lg:min-h-[650px] lg:gap-12 lg:px-8 lg:py-16">
+                class="relative z-10 mx-auto flex
+               min-h-[620px]
+               max-w-5xl
+               flex-col
+               items-center
+               justify-center
+               px-4
+               py-16
+               text-center
+               sm:px-6
+               lg:min-h-[680px]
+               lg:px-8">
 
-                {{-- Content --}}
-                <div
-                    class="relative z-10
-                   text-center
-                   md:text-left">
+                {{-- Eyebrow --}}
+                <p
+                    class="inline-flex items-center gap-3
+                   border-l-4 border-tsm-yellow
+                   bg-tsm-dark/45
+                   px-4 py-2
+                   text-[10px]
+                   font-extrabold
+                   uppercase
+                   tracking-[0.28em]
+                   text-tsm-yellow
+                   backdrop-blur-md
+                   sm:text-xs
+                   sm:tracking-[0.32em]">
+                    TSM Motors Agadir
+                </p>
 
-                    {{-- Badge --}}
+                {{-- Heading --}}
+                <h1
+                    class="font-heading
+                   mt-6
+                   max-w-4xl
+                   text-5xl
+                   font-extrabold
+                   uppercase
+                   leading-[0.9]
+                   tracking-tight
+                   text-white
+                   sm:text-6xl
+                   md:text-7xl
+                   lg:text-8xl">
+                    La puissance
+
+                    <span class="block text-tsm-yellow">
+                        à l'état pur.
+                    </span>
+                </h1>
+
+                {{-- Subtitle --}}
+                <p
+                    class="mt-5 text-base
+                   font-semibold
+                   text-white/95
+                   sm:text-lg
+                   lg:text-xl">
+                    Revendeur Officiel Suzuki à Agadir
+                </p>
+
+                {{-- Description --}}
+                <p
+                    class="mt-4 max-w-2xl
+                   text-sm
+                   leading-7
+                   text-white/70
+                   sm:text-base">
+                    Vente de motos, atelier de maintenance, location et accessoires
+                    dans un showroom pensé pour les passionnés de deux roues.
+                </p>
+
+                {{-- Search bar --}}
+                <form
+                    action="{{ route('motos.index') }}"
+                    method="GET"
+                    class="mt-8 w-full max-w-3xl">
                     <div
-                        class="mb-5 inline-flex items-center gap-2
-                       rounded-full border border-tsm-yellow/30
-                       bg-tsm-yellow/10
-                       px-3 py-2
-                       text-xs font-medium text-tsm-yellow
-                       sm:px-4 sm:text-sm">
+                        class="flex flex-col
+                       gap-2
+                       rounded-2xl
+                       border border-white/15
+                       bg-white/95
+                       p-2
+                       shadow-2xl
+                       backdrop-blur-md
+                       sm:flex-row
+                       sm:rounded-full">
 
-                        <span class="h-2 w-2 rounded-full bg-tsm-yellow"></span>
+                        <div class="relative flex-1">
 
-                        Revendeur Suzuki à Agadir
-
-                    </div>
-
-
-                    {{-- Title --}}
-                    <h1
-                        class="font-heading mx-auto max-w-xl
-                       text-3xl font-extrabold leading-tight tracking-tight text-white
-                       sm:text-4xl
-                       md:mx-0 md:text-4xl
-                       lg:max-w-2xl lg:text-5xl
-                       xl:text-6xl">
-                        Découvrez les meilleures
-
-                        <span class="text-tsm-yellow">
-                            motos
-                        </span>
-
-                        à Agadir
-                    </h1>
-
-
-                    {{-- Text --}}
-                    <p
-                        class="mx-auto mt-5 max-w-xl
-                       text-sm leading-6 text-tsm-muted
-                       sm:text-base sm:leading-7
-                       md:mx-0
-                       lg:mt-6 lg:text-lg">
-                        Explorez notre sélection de motos et scooters.
-                        Retrouvez des marques reconnues, des modèles modernes
-                        et un accompagnement professionnel chez TSM Motors.
-                    </p>
-
-
-                    {{-- Buttons --}}
-                    <div
-                        class="mt-7 flex flex-col gap-3
-                       sm:flex-row sm:justify-center
-                       md:justify-start">
-
-                        <a
-                            href="#motos"
-                            class="inline-flex min-h-12 items-center justify-center gap-2
-                           rounded-lg bg-tsm-yellow
-                           px-6 py-3
-                           text-sm font-semibold text-white
-                           transition hover:bg-tsm-gold">
-                            Explorer les motos
-
+                            {{-- Search icon --}}
                             <svg
-                                class="h-4 w-4"
+                                class="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-tsm-muted"
                                 fill="none"
                                 stroke="currentColor"
                                 viewBox="0 0 24 24">
@@ -152,587 +206,431 @@
                                     stroke-linecap="round"
                                     stroke-linejoin="round"
                                     stroke-width="2"
-                                    d="M17 8l4 4m0 0-4 4m4-4H3" />
+                                    d="m21 21-4.35-4.35m1.35-5.65A7 7 0 1 1 4 11a7 7 0 0 1 14 0Z" />
                             </svg>
-                        </a>
 
+                            <input
+                                type="text"
+                                name="q"
+                                placeholder="Rechercher une moto, marque ou modèle..."
+                                class="w-full
+                               rounded-xl
+                               border-0
+                               bg-transparent
+                               py-3.5
+                               pl-12
+                               pr-4
+                               text-sm
+                               text-tsm-dark
+                               placeholder:text-tsm-muted
+                               focus:outline-none
+                               focus:ring-0
+                               sm:rounded-full">
+                        </div>
 
-                        <a
-                            href="{{ route('contact.create') }}"
-                            class="inline-flex min-h-12 items-center justify-center
-                           rounded-lg border border-tsm-border
-                           bg-tsm-surface
-                           px-6 py-3
-                           text-sm font-semibold text-white
+                        <button
+                            type="submit"
+                            class="inline-flex
+                           items-center
+                           justify-center
+                           rounded-xl
+                           bg-tsm-yellow
+                           px-7
+                           py-3.5
+                           text-sm
+                           font-extrabold
+                           uppercase
+                           tracking-wide
+                           text-tsm-dark
+                           shadow-lg
+                           shadow-tsm-yellow/20
                            transition
-                           hover:border-tsm-yellow
-                           hover:bg-tsm-blue">
-                            Nous contacter
-                        </a>
+                           hover:bg-tsm-gold
+                           sm:rounded-full">
+                            Rechercher
+                        </button>
 
                     </div>
+                </form>
 
-
-                    {{-- Trust --}}
-                    <div
-                        class="mt-8 grid grid-cols-3 gap-4
-                       border-t border-tsm-border pt-6
-                       sm:mt-10 sm:gap-6 sm:pt-8
-                       md:max-w-lg">
-
-                        <div>
-                            <div
-                                class="font-heading text-xl font-bold text-white
-                               sm:text-2xl">
-                                3+
-                            </div>
-
-                            <div class="mt-1 text-xs text-tsm-muted sm:text-sm">
-                                Marques
-                            </div>
-                        </div>
-
-
-                        <div>
-                            <div
-                                class="font-heading text-xl font-bold text-white
-                               sm:text-2xl">
-                                50+
-                            </div>
-
-                            <div class="mt-1 text-xs text-tsm-muted sm:text-sm">
-                                Modèles
-                            </div>
-                        </div>
-
-
-                        <div>
-                            <div
-                                class="font-heading text-xl font-bold text-white
-                               sm:text-2xl">
-                                Casa
-                            </div>
-
-                            <div class="mt-1 text-xs text-tsm-muted sm:text-sm">
-                                Showroom
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                {{-- Hero Moto --}}
+                {{-- Buttons --}}
                 <div
-                    class="relative hidden md:block flex min-h-[280px] items-center justify-center
-                   sm:min-h-[360px]
-                   md:min-h-[420px]
-                   lg:min-h-[520px]">
-
-                    {{-- Red circle --}}
-                    <div
-                        class="absolute
-                       h-[220px] w-[220px]
-                       rounded-full
-                       border border-tsm-yellow/30
-                       bg-tsm-yellow/10
-                       shadow-2xl shadow-tsm-yellow/25
-                       sm:h-[300px] sm:w-[300px]
-                       md:h-[340px] md:w-[340px]
-                       lg:h-[420px] lg:w-[420px]">
-                    </div>
-
-
-                    {{-- Decorative square --}}
-                    <div
-                        class="absolute
-                       h-[190px] w-[190px]
-                       rotate-12
-                       border border-white/5
-                       sm:h-[270px] sm:w-[270px]
-                       md:h-[320px] md:w-[320px]
-                       lg:h-[430px] lg:w-[430px]">
-                    </div>
-
-
-                    {{-- Moto --}}
-                    <img
-                        src="{{ asset('images/hero-moto.png') }}"
-                        alt="Moto sportive TSM Motors Agadir"
-                        class="relative z-10
-                       w-full max-w-[320px]
-                       object-contain
-                       drop-shadow-2xl
-                       sm:max-w-[400px]
-                       md:max-w-[400px]
-                       lg:max-w-[400px]">
-
-
-                    {{-- Badge --}}
-                    <div
-                        class="absolute right-0 top-6 z-20
-                       hidden rounded-xl
-                       border border-tsm-border
-                       bg-tsm-surface/90
-                       px-4 py-3
-                       shadow-xl backdrop-blur
-                       lg:block">
-
-                        <div class="flex items-center gap-3">
-
-                            <div
-                                class="flex h-9 w-9 items-center justify-center
-                               rounded-lg
-                               bg-tsm-yellow/20
-                               text-tsm-yellow">
-                                ?
-                            </div>
-
-                            <div>
-
-                                <p class="text-xs text-tsm-muted">
-                                    TSM Motors
-                                </p>
-
-                                <p class="text-sm font-semibold text-white">
-                                    Revendeur Suzuki
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        {{-- ====================================================== --}}
-        {{-- Brands --}}
-        {{-- ====================================================== --}}
-
-        <section
-            id="marques"
-            class="border-y border-tsm-border bg-tsm-light">
-
-            <div class="mx-auto max-w-7xl px-4 py-7 sm:px-6 lg:px-8">
-
-                <p
-                    class="mb-6 text-center text-xs font-bold uppercase tracking-[0.25em] text-gray-500">
-                    Nos marques
-                </p>
-
-                <div
-                    class="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 text-center">
-
-                    @foreach ($brands as $brand)
-
-                    <div class="flex items-center justify-center">
-
-                        <span
-                            class="font-heading text-xl font-bold text-tsm-surface">
-                            {{ $brand->name }}
-                        </span>
-
-                    </div>
-
-                    @endforeach
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        {{-- ====================================================== --}}
-        {{-- Featured Motos --}}
-        {{-- ====================================================== --}}
-
-        <section
-            id="motos"
-            class="py-20 lg:py-28">
-
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
-                {{-- Heading --}}
-                <div class="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
-
-                    <div>
-
-                        <span
-                            class="text-sm font-semibold uppercase tracking-widest text-tsm-yellow">
-                            Notre sélection
-                        </span>
-
-                        <h2
-                            class="font-heading mt-3 text-3xl font-bold text-white sm:text-4xl">
-                            Motos en vedette
-                        </h2>
-
-                        <p class="mt-3 max-w-xl text-tsm-muted">
-                            Découvrez une sélection des modèles disponibles chez TSM Motors.
-                        </p>
-
-                    </div>
-
-
+                    class="mt-5 flex
+                   flex-col
+                   gap-3
+                   sm:flex-row">
                     <a
-                        href="{{ route('motos.index') }}"
-                        class="inline-flex items-center gap-2 text-sm font-semibold text-white transition hover:text-tsm-yellow">
-                        Voir toutes les motos
-
-                        <span>?</span>
+                        href="#motos"
+                        class="inline-flex
+                       items-center
+                       justify-center
+                       rounded-full
+                       bg-tsm-yellow
+                       px-7
+                       py-3
+                       text-xs
+                       font-extrabold
+                       uppercase
+                       tracking-wide
+                       text-tsm-dark
+                       transition
+                       hover:bg-tsm-gold
+                       sm:text-sm">
+                        Découvrir la gamme
                     </a>
 
+                    <a
+                        href="{{ route('contact.create') }}"
+                        class="inline-flex
+                       items-center
+                       justify-center
+                       rounded-full
+                       border border-white/30
+                       bg-tsm-dark/35
+                       px-7
+                       py-3
+                       text-xs
+                       font-bold
+                       text-white
+                       backdrop-blur
+                       transition
+                       hover:border-tsm-yellow
+                       hover:text-tsm-yellow
+                       sm:text-sm">
+                        Contacter le showroom
+                    </a>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="marques" class="border-y border-white/10 bg-tsm-dark">
+            <div class="mx-auto flex max-w-7xl flex-col gap-5 px-4 py-5 sm:px-6 lg:flex-row lg:items-center lg:px-8">
+                <p class="text-xs font-extrabold uppercase tracking-[0.28em] text-tsm-yellow lg:w-44">
+                    Marques au showroom
+                </p>
+
+                <div class="flex flex-wrap items-center gap-x-10 gap-y-3">
+                    @foreach ($brands as $brand)
+                    <span class="font-heading text-2xl font-extrabold uppercase tracking-wide text-white/80">
+                        {{ $brand->name }}
+                    </span>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+
+        <section id="motos" class="relative overflow-hidden bg-tsm-navy py-14">
+            <div class="absolute -left-40 top-16 h-80 w-80 rounded-full bg-tsm-yellow/10 blur-[110px]"></div>
+            <div class="absolute right-0 top-0 h-full w-1/2 bg-gradient-to-l from-tsm-blue/35 to-transparent"></div>
+
+            <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+                    <div>
+                        <p class="text-xs font-extrabold uppercase tracking-[0.32em] text-tsm-yellow">Sélection showroom</p>
+                        <h2 class="font-heading mt-2 text-4xl font-extrabold uppercase text-white sm:text-5xl">
+                            Nos Motos Vedettes
+                        </h2>
+                    </div>
+
+                    <a href="{{ route('motos.index') }}" class="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 px-5 py-2.5 text-sm font-bold text-white transition hover:border-tsm-yellow hover:text-tsm-yellow">
+                        Voir toutes les motos
+                        <span>→</span>
+                    </a>
                 </div>
 
-
-                {{-- Cards --}}
                 @if($motos->isEmpty())
-                <p class="text-tsm-muted flex items-center justify-center mt-10">Aucune moto disponible pour le moment.</p>
+                <div class="mt-8 rounded-3xl border border-white/10 bg-white/5 px-6 py-12 text-center text-white/70">
+                    Aucune moto disponible pour le moment.
+                </div>
                 @else
-                <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4  ">
-
+                <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
                     @foreach ($motos as $moto)
-                    <article
-                        class="group overflow-hidden rounded-2xl border border-tsm-border
-                           bg-tsm-surface transition duration-300
-                           hover:-translate-y-1 hover:border-tsm-yellow/60">
+                    <article class="group relative overflow-hidden rounded-[1.6rem] bg-tsm-light text-tsm-dark shadow-2xl shadow-black/20 transition duration-300 hover:-translate-y-1 hover:shadow-tsm-yellow/10">
+                        <div class="absolute right-0 top-0 z-20 rounded-bl-2xl bg-tsm-yellow px-3 py-2 text-[10px] font-extrabold uppercase tracking-[0.18em] text-tsm-dark">
+                            Disponible
+                        </div>
 
-                        {{-- Image --}}
-                        <div
-                            class="relative flex h-56 items-center justify-center overflow-hidden bg-tsm-dark">
-
-                            <div
-                                class="absolute h-32 w-32 rounded-full bg-tsm-yellow/15 blur-3xl"></div>
+                        <div class="relative flex h-48 items-center justify-center overflow-hidden bg-gradient-to-br from-white via-slate-100 to-slate-200">
+                            <div class="absolute h-36 w-36 rounded-full bg-tsm-yellow/25 blur-3xl transition group-hover:scale-125"></div>
 
                             <a href="{{ route('motos.show', $moto->slug) }}" class="relative z-10 h-full w-full">
                                 <img
                                     src="{{ $moto->image ? Storage::url($moto->image) : asset('images/hero-moto.png') }}"
                                     alt="{{ $moto->name }}"
-                                    class="h-full w-full object-contain p-5 transition duration-500
-                                       group-hover:scale-105">
+                                    class="h-full w-full object-contain p-5 transition duration-500 group-hover:scale-110">
                             </a>
-
-                            <span
-                                class="absolute right-3 top-3 rounded-md bg-tsm-yellow
-                                   px-2.5 py-1 text-xs font-semibold text-white z-20">
-                                Disponible
-                            </span>
-
                         </div>
 
-
                         <div class="p-5">
-
-                            <p
-                                class="text-xs font-semibold uppercase tracking-wider text-tsm-yellow">
-                                {{ $moto->category->name }}
+                            <p class="text-[11px] font-extrabold uppercase tracking-[0.22em] text-tsm-gold">
+                                {{ $moto->brand?->name ?? 'Suzuki' }}
                             </p>
 
                             <a href="{{ route('motos.show', $moto->slug) }}">
-                                <h3
-                                    class="font-heading mt-2 text-lg font-bold text-white transition hover:text-tsm-yellow">
-                                    {{ $moto->name}}
+                                <h3 class="font-heading mt-1 min-h-[3rem] text-2xl font-extrabold uppercase leading-none text-tsm-dark transition group-hover:text-tsm-blue">
+                                    {{ $moto->name }}
                                 </h3>
                             </a>
 
-
-                            <div class="mt-5 flex items-center justify-between">
-
-                                <span class="font-heading text-lg font-bold text-white">
-                                    {{ $moto->price }} DH
-                                </span>
-
+                            <div class="mt-4 grid grid-cols-3 gap-2 border-y border-slate-200 py-3 text-center">
+                                <div>
+                                    <p class="text-[10px] font-bold uppercase tracking-wider text-tsm-muted">Année</p>
+                                    <p class="mt-1 text-xs font-extrabold">{{ $moto->year ?? '-' }}</p>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] font-bold uppercase tracking-wider text-tsm-muted">CC</p>
+                                    <p class="mt-1 text-xs font-extrabold">{{ $moto->engine_cc ?? '-' }}</p>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] font-bold uppercase tracking-wider text-tsm-muted">Cat.</p>
+                                    <p class="mt-1 truncate text-xs font-extrabold">{{ $moto->category?->name ?? '-' }}</p>
+                                </div>
                             </div>
 
+                            <div class="mt-4 flex items-center justify-between gap-3">
+                                <p class="font-heading text-2xl font-extrabold text-tsm-navy">
+                                    {{ $moto->price ? number_format((float) $moto->price, 0, ',', ' ') . ' DH' : 'Sur demande' }}
+                                </p>
 
-                            <a
-                                href="{{ route('motos.show', $moto->slug) }}"
-                                class="mt-5 flex w-full items-center justify-center rounded-lg
-                                   border border-tsm-border px-4 py-3 text-sm font-semibold
-                                   text-white transition hover:border-tsm-yellow
-                                   hover:bg-tsm-yellow">
-                                Voir détails
-                            </a>
-
+                                <a href="{{ route('motos.show', $moto->slug) }}" class="rounded-full bg-tsm-navy px-4 py-2 text-xs font-extrabold uppercase text-white transition hover:bg-tsm-yellow hover:text-tsm-dark">
+                                    Voir la fiche
+                                </a>
+                            </div>
                         </div>
-
                     </article>
-
                     @endforeach
-
                 </div>
                 @endif
-
             </div>
-
         </section>
 
-
-        {{-- ====================================================== --}}
-        {{-- Why TSM Motors --}}
-        {{-- ====================================================== --}}
-
-        <section class="border-y border-tsm-border bg-tsm-surface py-20">
-
+        <section id="services" class="bg-tsm-dark py-14">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
-                <div class="text-center">
-
-                    <span class="text-sm font-semibold uppercase tracking-widest text-tsm-yellow">
-                        TSM Motors
-                    </span>
-
-                    <h2 class="font-heading mt-3 text-3xl font-bold text-white">
-                        Pourquoi nous choisir ?
-                    </h2>
-
+                <div class="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+                    <div>
+                        <p class="text-xs font-extrabold uppercase tracking-[0.32em] text-tsm-yellow">Expertise TSM</p>
+                        <h2 class="font-heading mt-2 text-4xl font-extrabold uppercase text-white sm:text-5xl">
+                            Nos Services d'Expertise
+                        </h2>
+                    </div>
+                    <p class="max-w-lg text-sm leading-6 text-white/60">
+                        Un accompagnement complet avant, pendant et après l'achat de votre moto.
+                    </p>
                 </div>
 
-
-                <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-
-                    {{-- Item --}}
-                    <div>
-
-                        <div
-                            class="flex h-12 w-12 items-center justify-center rounded-xl
-                           bg-tsm-yellow/10 text-tsm-yellow">
-                            <svg
-                                class="h-6 w-6"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                    stroke-width="2"
-                                    d="M5 13l4 4L19 7" />
-                            </svg>
+                <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                    <a href="{{ route('motos.index') }}" class="group relative min-h-[260px] overflow-hidden rounded-[1.6rem] border border-white/10 bg-tsm-surface">
+                        <img src="{{ asset('images/hero-moto1.png') }}" alt="Vente moto TSM Motors" class="absolute inset-0 h-full w-full object-cover opacity-75 transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-tsm-dark via-tsm-dark/55 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-5">
+                            <span class="block h-1 w-10 bg-tsm-yellow"></span>
+                            <h3 class="font-heading mt-4 text-3xl font-extrabold uppercase text-white">Vente</h3>
+                            <p class="mt-2 text-sm text-white/65">Motos et conseils showroom.</p>
                         </div>
+                    </a>
 
-                        <h3 class="font-heading mt-5 text-lg font-bold">
-                            Revendeur Suzuki officiel
-                        </h3>
-
-                        <p class="mt-2 text-sm leading-6 text-tsm-muted">
-                            Découvrez les motos Suzuki et une sélection de modèles adaptés à la route marocaine.
-                        </p>
-
-                    </div>
-
-
-                    <div>
-
-                        <div
-                            class="flex h-12 w-12 items-center justify-center rounded-xl
-                           bg-tsm-yellow/10 text-tsm-yellow">
-                            <svg
-                                class="h-6 w-6"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                    stroke-width="2"
-                                    d="M3 13h18M5 17h14M7 9h10" />
-                            </svg>
+                    <a href="{{ route('contact.create') }}" class="group relative min-h-[260px] overflow-hidden rounded-[1.6rem] border border-white/10 bg-tsm-surface">
+                        <img src="{{ asset('images/Showroom.webp') }}" alt="Atelier TSM Motors" class="absolute inset-0 h-full w-full object-cover opacity-70 transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-tsm-dark via-tsm-dark/60 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-5">
+                            <span class="block h-1 w-10 bg-tsm-yellow"></span>
+                            <h3 class="font-heading mt-4 text-3xl font-extrabold uppercase text-white">Atelier</h3>
+                            <p class="mt-2 text-sm text-white/65">Maintenance et entretien.</p>
                         </div>
+                    </a>
 
-                        <h3 class="font-heading mt-5 text-lg font-bold">
-                            Vente, location et accessoires
-                        </h3>
-
-                        <p class="mt-2 text-sm leading-6 text-tsm-muted">
-                            Motos neuves, location, accessoires et équipements pour rouler sereinement.
-                        </p>
-
-                    </div>
-
-
-                    <div>
-
-                        <div
-                            class="flex h-12 w-12 items-center justify-center rounded-xl
-                           bg-tsm-yellow/10 text-tsm-yellow">
-                            <svg
-                                class="h-6 w-6"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                    stroke-width="2"
-                                    d="M12 12c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 2.239-5 5 2.239 5 5 5zm0 2c-4.418 0-8 2.239-8 5v1h16v-1c0-2.761-3.582-5-8-5z" />
-                            </svg>
+                    <a id="location" href="{{ route('contact.create') }}" class="group relative min-h-[260px] overflow-hidden rounded-[1.6rem] border border-white/10 bg-tsm-surface">
+                        <img src="{{ asset('images/hero-moto.png') }}" alt="Location moto TSM Motors" class="absolute inset-0 h-full w-full object-cover opacity-70 transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-tsm-dark via-tsm-dark/60 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-5">
+                            <span class="block h-1 w-10 bg-tsm-yellow"></span>
+                            <h3 class="font-heading mt-4 text-3xl font-extrabold uppercase text-white">Location</h3>
+                            <p class="mt-2 text-sm text-white/65">Réservez votre expérience.</p>
                         </div>
+                    </a>
 
-                        <h3 class="font-heading mt-5 text-lg font-bold">
-                            Atelier et maintenance
-                        </h3>
-
-                        <p class="mt-2 text-sm leading-6 text-tsm-muted">
-                            Une équipe atelier disponible pour entretenir, diagnostiquer et préparer votre moto.
-                        </p>
-
-                    </div>
-
-
-                    <div>
-
-                        <div
-                            class="flex h-12 w-12 items-center justify-center rounded-xl
-                           bg-tsm-yellow/10 text-tsm-yellow">
-                            <svg
-                                class="h-6 w-6"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path
-                                    stroke-width="2"
-                                    d="M12 21s6-5.686 6-11a6 6 0 10-12 0c0 5.314 6 11 6 11z" />
-                                <circle cx="12" cy="10" r="2" stroke-width="2" />
-                            </svg>
+                    <a id="accessoires" href="{{ route('contact.create') }}" class="group relative min-h-[260px] overflow-hidden rounded-[1.6rem] border border-white/10 bg-tsm-surface">
+                        <img src="{{ asset('images/hero-moto1.png') }}" alt="Accessoires moto TSM Motors" class="absolute inset-0 h-full w-full object-cover opacity-70 transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-tsm-dark via-tsm-dark/60 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-5">
+                            <span class="block h-1 w-10 bg-tsm-yellow"></span>
+                            <h3 class="font-heading mt-4 text-3xl font-extrabold uppercase text-white">Accessoires</h3>
+                            <p class="mt-2 text-sm text-white/65">Équipements et pièces.</p>
                         </div>
-
-                        <h3 class="font-heading mt-5 text-lg font-bold">
-                            Showroom à Agadir
-                        </h3>
-
-                        <p class="mt-2 text-sm leading-6 text-tsm-muted">
-                            Venez découvrir nos motos Suzuki et nos services directement dans notre showroom à Agadir.
-                        </p>
-
-                    </div>
-
+                    </a>
                 </div>
-
             </div>
-
         </section>
 
+        <section class="relative overflow-hidden bg-tsm-navy py-12">
+            <div class="absolute inset-y-0 right-0 w-1/2 bg-tsm-blue/40"></div>
 
-        {{-- ====================================================== --}}
-        {{-- About --}}
-        {{-- ====================================================== --}}
+            <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                    <div class="border-l border-white/10 pl-5">
+                        <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-tsm-yellow text-tsm-dark">
+                            <span class="font-heading text-xl font-extrabold">01</span>
+                        </div>
+                        <h3 class="font-heading text-2xl font-extrabold uppercase text-white">Revendeur Suzuki officiel</h3>
+                        <p class="mt-2 text-sm leading-6 text-white/60">Un point de vente Suzuki à Agadir avec accompagnement personnalisé.</p>
+                    </div>
 
-        <section
-            id="about"
-            class="py-20 lg:py-28">
+                    <div class="border-l border-white/10 pl-5">
+                        <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-tsm-yellow text-tsm-dark">
+                            <span class="font-heading text-xl font-extrabold">02</span>
+                        </div>
+                        <h3 class="font-heading text-2xl font-extrabold uppercase text-white">Équipe expérimentée</h3>
+                        <p class="mt-2 text-sm leading-6 text-white/60">Des conseils clairs pour choisir la moto adaptée à votre usage.</p>
+                    </div>
 
-            <div
-                class="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+                    <div class="border-l border-white/10 pl-5">
+                        <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-tsm-yellow text-tsm-dark">
+                            <span class="font-heading text-xl font-extrabold">03</span>
+                        </div>
+                        <h3 class="font-heading text-2xl font-extrabold uppercase text-white">Atelier & entretien</h3>
+                        <p class="mt-2 text-sm leading-6 text-white/60">Diagnostic, maintenance et préparation dans notre atelier.</p>
+                    </div>
 
-                {{-- Image --}}
+                    <div class="border-l border-white/10 pl-5">
+                        <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-tsm-yellow text-tsm-dark">
+                            <span class="font-heading text-xl font-extrabold">04</span>
+                        </div>
+                        <h3 class="font-heading text-2xl font-extrabold uppercase text-white">Showroom à Agadir</h3>
+                        <p class="mt-2 text-sm leading-6 text-white/60">Un espace moderne pour découvrir motos, accessoires et services.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="bg-tsm-light py-14 text-tsm-dark">
+            <div class="mx-auto grid max-w-7xl items-center gap-8 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
                 <div class="relative">
-
-                    <div
-                        class="absolute -left-5 -top-5 h-28 w-28 rounded-2xl
-                       bg-tsm-yellow/20 blur-3xl"></div>
-
-                    <div
-                        class="relative overflow-hidden rounded-2xl border border-tsm-border">
-
+                    <div class="absolute -left-4 -top-4 h-28 w-28 rounded-3xl bg-tsm-yellow"></div>
+                    <div class="relative overflow-hidden rounded-[1.8rem] shadow-card-hover">
                         <img
-                            src="{{ asset('images/Showroom.jpg') }}"
+                            src="{{ asset('images/Showroom.webp') }}"
                             alt="Showroom TSM Motors Agadir"
-                            class="h-[500px] w-full positioned object-cover transition duration-500 hover:scale-105">
-
+                            class="h-[360px] w-full object-cover sm:h-[430px]">
                     </div>
-
+                    <div class="absolute bottom-5 right-5 rounded-2xl bg-tsm-navy px-5 py-4 text-white shadow-2xl">
+                        <p class="text-xs font-bold uppercase tracking-[0.22em] text-tsm-yellow">Agadir</p>
+                        <p class="font-heading text-3xl font-extrabold uppercase">Showroom</p>
+                    </div>
                 </div>
 
-
-                {{-- Content --}}
                 <div>
-
-                    <span
-                        class="text-sm font-semibold uppercase tracking-widest text-tsm-yellow">
-                        À propos
-                    </span>
-
-                    <h2
-                        class="font-heading mt-3 text-3xl font-bold leading-tight text-white sm:text-4xl">
-                        TSM Motors Agadir
+                    <p class="text-xs font-extrabold uppercase tracking-[0.32em] text-tsm-gold">
+                        À propos de notre showroom
+                    </p>
+                    <h2 class="font-heading mt-3 text-5xl font-extrabold uppercase leading-none text-tsm-navy sm:text-6xl">
+                        Votre partenaire moto de confiance à Agadir
                     </h2>
-
-                    <p class="mt-6 leading-7 text-tsm-muted">
-                        TSM Motors vous accompagne dans le choix de votre prochaine moto.
-                        Notre objectif est de proposer une expérience simple,
-                        transparente et adaptée aux besoins de chaque passionné.
+                    <p class="mt-5 text-base leading-7 text-tsm-muted">
+                        TSM Motors accompagne ses clients dans le choix, l'entretien et l'expérience de leur moto. Notre showroom réunit vente, atelier, location et accessoires dans une ambiance premium.
+                    </p>
+                    <p class="mt-4 text-sm leading-7 text-tsm-muted">
+                        Passez nous voir pour découvrir les motos Suzuki, préparer un essai ou obtenir un conseil atelier adapté à votre usage.
                     </p>
 
-                    <p class="mt-4 leading-7 text-tsm-muted">
-                        Découvrez notre sélection Suzuki, nos accessoires,
-                        notre service location et notre atelier directement dans notre showroom à Agadir.
-                    </p>
-
-
-                    <a
-                        href="{{ route('contact.create') }}"
-                        class="mt-8 inline-flex rounded-lg bg-tsm-yellow
-                       px-6 py-3.5 text-sm font-semibold text-white
-                       transition hover:bg-tsm-gold">
-                        Découvrir TSM Motors
+                    <a href="{{ route('contact.create') }}" class="mt-7 inline-flex rounded-full bg-tsm-navy px-7 py-3 text-sm font-extrabold uppercase tracking-wide text-white transition hover:bg-tsm-blue">
+                        En savoir plus
                     </a>
-
                 </div>
-
             </div>
-
         </section>
 
-
-        {{-- ====================================================== --}}
-        {{-- CTA --}}
-        {{-- ====================================================== --}}
-
-        <section class="px-4 pb-20 sm:px-6 lg:px-8 lg:pb-28">
-
-            <div
-                class="relative mx-auto max-w-7xl overflow-hidden rounded-2xl bg-tsm-yellow
-               px-6 py-12 text-center sm:px-12 lg:py-16">
-
-                <div
-                    class="absolute -right-20 -top-20 h-64 w-64 rounded-full border border-white/10"></div>
-
-                <div
-                    class="absolute -bottom-32 -left-20 h-64 w-64 rounded-full border border-white/10"></div>
-
-
-                <div class="relative z-10">
-
-                    <h2
-                        class="font-heading text-3xl font-bold text-white sm:text-4xl">
-                        Trouvez votre prochaine moto dès aujourd’hui
-                    </h2>
-
-                    <p class="mx-auto mt-4 max-w-2xl text-white/75">
-                        Explorez notre catalogue et découvrez le modèle qui correspond
-                        à votre style et à vos besoins.
-                    </p>
-
-                    <a
-                        href="{{route('motos.index')}}"
-                        class="mt-8 inline-flex rounded-lg bg-tsm-dark
-                       px-7 py-3.5 text-sm font-semibold text-white
-                       transition hover:bg-tsm-surface">
-                        Voir notre catalogue
-                    </a>
-
-                </div>
-
+        <section class="relative overflow-hidden bg-tsm-dark">
+            <div class="absolute inset-0">
+                <img src="{{ asset('images/hero-moto1.png') }}" alt="Expérience Suzuki TSM Motors" class="h-full w-full object-cover opacity-55">
+                <div class="absolute inset-0 bg-gradient-to-r from-tsm-dark via-tsm-navy/85 to-tsm-blue/45"></div>
             </div>
 
+            <div class="relative mx-auto flex min-h-[360px] max-w-7xl items-center px-4 py-14 sm:px-6 lg:px-8">
+                <div class="max-w-2xl">
+                    <p class="text-xs font-extrabold uppercase tracking-[0.32em] text-tsm-yellow">Expérience Suzuki</p>
+                    <h2 class="font-heading mt-3 text-5xl font-extrabold uppercase leading-none text-white sm:text-6xl">
+                        Prêt à vivre
+                        <span class="block text-tsm-yellow">l'expérience Suzuki ?</span>
+                    </h2>
+                    <a href="{{ route('contact.create') }}" class="mt-7 inline-flex rounded-full bg-tsm-yellow px-7 py-3 text-sm font-extrabold uppercase tracking-wide text-tsm-dark transition hover:bg-tsm-gold">
+                        Contacter le showroom
+                    </a>
+                </div>
+            </div>
         </section>
-
     </main>
 
-    <x-footer />
+    <footer class="border-t border-white/10 bg-tsm-dark">
+        <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
+                <div class="lg:col-span-2">
+                    <img src="{{ asset('images/logo.png') }}" alt="TSM Motors Logo" class="h-14 w-auto">
+                    <p class="mt-4 max-w-sm text-sm leading-6 text-white/60">
+                        TSM Motors Agadir, revendeur Suzuki, showroom moto, atelier, location et accessoires.
+                    </p>
+                </div>
 
+                <div>
+                    <h4 class="font-heading text-xl font-extrabold uppercase text-white">Navigation</h4>
+                    <div class="mt-4 flex flex-col gap-2 text-sm text-white/60">
+                        <a href="{{ route('home') }}#home" class="hover:text-tsm-yellow">Accueil</a>
+                        <a href="{{ route('motos.index') }}" class="hover:text-tsm-yellow">Motos</a>
+                        <a href="{{ route('home') }}#services" class="hover:text-tsm-yellow">Services</a>
+                        <a href="{{ route('contact.create') }}" class="hover:text-tsm-yellow">Contact</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-heading text-xl font-extrabold uppercase text-white">Services</h4>
+                    <div class="mt-4 flex flex-col gap-2 text-sm text-white/60">
+                        <a href="{{ route('motos.index') }}" class="hover:text-tsm-yellow">Motos Suzuki</a>
+                        <a href="{{ route('home') }}#services" class="hover:text-tsm-yellow">Atelier</a>
+                        <a href="{{ route('home') }}#location" class="hover:text-tsm-yellow">Location</a>
+                        <a href="{{ route('home') }}#accessoires" class="hover:text-tsm-yellow">Accessoires</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-heading text-xl font-extrabold uppercase text-white">Contact</h4>
+                    <div class="mt-4 space-y-2 text-sm text-white/60">
+                        <p>Agadir, Maroc</p>
+                        <p>+212 6 89 49 75 06<br>+212 6 84 60 25 60</p>
+                        <p>contact@tsmmotors.ma</p>
+                    </div>
+
+                    <div class="mt-4 flex gap-2">
+                        <a href="https://www.instagram.com/tsm_motors_agadir/" target="_blank" class="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-xs font-bold text-white transition hover:border-tsm-yellow hover:bg-tsm-yellow hover:text-tsm-dark">
+                            IG
+                        </a>
+                        <a href="https://web.facebook.com/people/TSM-Motors-Agadir/61584669695694/" target="_blank" class="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-xs font-bold text-white transition hover:border-tsm-yellow hover:bg-tsm-yellow hover:text-tsm-dark">
+                            FB
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 flex flex-col justify-between gap-3 border-t border-white/10 pt-5 text-xs text-white/45 sm:flex-row">
+                <p>© {{ date('Y') }} TSM Motors Agadir. Tous droits réservés.</p>
+                <p>Agadir, Maroc</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const homeMenuButton = document.getElementById('homeMenuButton');
+        const homeMobileMenu = document.getElementById('homeMobileMenu');
+
+        homeMenuButton?.addEventListener('click', () => {
+            homeMobileMenu?.classList.toggle('hidden');
+        });
+
+        homeMobileMenu?.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => {
+                homeMobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
 </body>
 
 </html>

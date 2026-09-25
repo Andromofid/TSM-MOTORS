@@ -10,7 +10,7 @@
             <div>
 
                 <h3 class="font-heading text-xl font-bold text-white">
-                    <img src="{{asset('images/logo.png')}}" alt="Logo" sizes="" srcset="">
+                    <img src="{{asset('images/logo.png')}}" alt="Logo" class="h-20" sizes="" srcset="">
                 </h3>
 
                 <p class="mt-4 max-w-xs text-sm leading-6 text-tsm-muted">
@@ -64,13 +64,11 @@
                 <div class="mt-4 space-y-3 text-sm text-tsm-muted">
 
                     <p>
-                        Agadir, Maroc
+                        numéro 3, Bloc 118 rue, Agadir 80000  
                     </p>
 
                     <p>
-                        +212 6 89 49 75 06
-                        <br>
-                        +212 6 84 60 25 60
+                        +212 6 61 24 47 77
                     </p>
 
                     <p>
@@ -96,7 +94,7 @@
                 <div class="mt-5 flex gap-3">
 
                     <a
-                        href="https://www.instagram.com/tsm_motors_agadir/"
+                        href="https://www.instagram.com/tsm.motors.agadir/"
                         traget="_blank"
                         class="flex h-10 w-10 items-center justify-center rounded-lg
                            border border-tsm-border text-sm text-white
