@@ -100,12 +100,26 @@
             <div class="absolute -left-40 top-28 h-80 w-80 rounded-full bg-tsm-yellow/10 blur-[110px]"></div>
             <div class="absolute right-0 top-0 h-full w-1/2 bg-gradient-to-l from-tsm-blue/25 to-transparent"></div>
 
-            <div class="relative mx-auto grid max-w-7xl gap-7 px-4 sm:px-6 lg:grid-cols-[320px_1fr] lg:px-8">
-                <aside class="hidden lg:block">
-                    <div class="sticky top-24 overflow-hidden rounded-[1.6rem] border border-white/10 bg-tsm-navy/90 p-5 shadow-2xl shadow-black/20 backdrop-blur-xl">
+            <div class="relative sticky mx-auto grid max-w-7xl gap-7 px-4 sm:px-6 lg:grid-cols-[320px_1fr] lg:px-8">
+                <aside class="hidden lg:block self-start">
+                    <div
+                        class="sticky top-24
+               overflow-hidden
+               rounded-[1.6rem]
+               border border-white/10
+               bg-tsm-navy/90
+               p-5
+               shadow-2xl shadow-black/20
+               backdrop-blur-xl">
                         <div class="border-b border-white/10 pb-4">
-                            <p class="text-xs font-extrabold uppercase tracking-[0.28em] text-tsm-yellow">Recherche avancée</p>
-                            <h2 class="font-heading mt-1 text-3xl font-extrabold uppercase text-white">Affiner le catalogue</h2>
+                            <p class="text-xs font-extrabold uppercase tracking-[0.28em] text-tsm-yellow">
+                                Recherche avancée
+                            </p>
+
+                            <h2 class="font-heading mt-1 text-3xl font-extrabold uppercase text-white">
+                                Affiner le catalogue
+                            </h2>
+
                             <p class="mt-2 text-sm leading-6 text-white/55">
                                 Sélectionnez vos critères et trouvez rapidement la moto adaptée à votre route.
                             </p>
@@ -134,80 +148,80 @@
                     @if ($motos->isNotEmpty())
                     <div class="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-2">
                         @foreach ($motos as $moto)
-                            <article class="group relative overflow-hidden rounded-[1.6rem] bg-tsm-light text-tsm-dark shadow-2xl shadow-black/20 transition duration-300 hover:-translate-y-1 hover:shadow-tsm-yellow/10">
-                                <div class="absolute right-0 top-0 z-20 flex gap-2">
-                                    @if ($moto->condition)
-                                        <span class="rounded-bl-2xl bg-tsm-navy px-3 py-2 text-[10px] font-extrabold uppercase tracking-[0.18em] text-white">
-                                            {{ $moto->condition }}
-                                        </span>
-                                    @endif
+                        <article class="group relative overflow-hidden rounded-[1.6rem] bg-tsm-light text-tsm-dark shadow-2xl shadow-black/20 transition duration-300 hover:-translate-y-1 hover:shadow-tsm-yellow/10">
+                            <div class="absolute right-0 top-0 z-20 flex gap-2">
+                                @if ($moto->condition)
+                                <span class="rounded-bl-2xl bg-tsm-navy px-3 py-2 text-[10px] font-extrabold uppercase tracking-[0.18em] text-white">
+                                    {{ $moto->condition }}
+                                </span>
+                                @endif
 
-                                    @if ($moto->is_featured)
-                                        <span class="rounded-bl-2xl bg-tsm-yellow px-3 py-2 text-[10px] font-extrabold uppercase tracking-[0.18em] text-tsm-dark">
-                                            Vedette
-                                        </span>
-                                    @endif
+                                @if ($moto->is_featured)
+                                <span class="rounded-bl-2xl bg-tsm-yellow px-3 py-2 text-[10px] font-extrabold uppercase tracking-[0.18em] text-tsm-dark">
+                                    Vedette
+                                </span>
+                                @endif
+                            </div>
+
+                            <div class="relative flex h-56 items-center justify-center overflow-hidden bg-gradient-to-br from-white via-slate-100 to-slate-200">
+                                <div class="absolute h-40 w-40 rounded-full bg-tsm-yellow/25 blur-3xl transition duration-500 group-hover:scale-125"></div>
+
+                                <a href="{{ route('motos.show', $moto->slug) }}" class="relative z-10 h-full w-full">
+                                    <img
+                                        src="{{ $moto->image ? Storage::url($moto->image) : asset('images/hero-moto.png') }}"
+                                        alt="{{ $moto->name }}"
+                                        class="h-full w-full object-contain p-6 transition duration-500 group-hover:scale-110">
+                                </a>
+                            </div>
+
+                            <div class="p-5">
+                                <div class="flex flex-wrap items-center gap-2 text-[11px] font-extrabold uppercase tracking-[0.22em] text-tsm-gold">
+                                    <span>{{ $moto->brand?->name ?? 'Marque' }}</span>
+                                    <span class="text-tsm-muted">/</span>
+                                    <span>{{ $moto->category?->name ?? 'Catégorie' }}</span>
                                 </div>
 
-                                <div class="relative flex h-56 items-center justify-center overflow-hidden bg-gradient-to-br from-white via-slate-100 to-slate-200">
-                                    <div class="absolute h-40 w-40 rounded-full bg-tsm-yellow/25 blur-3xl transition duration-500 group-hover:scale-125"></div>
+                                <a href="{{ route('motos.show', $moto->slug) }}" class="group/title">
+                                    <h3 class="font-heading mt-2 min-h-[3rem] text-3xl font-extrabold uppercase leading-none text-tsm-dark transition group-hover/title:text-tsm-blue">
+                                        {{ $moto->name }}
+                                    </h3>
+                                </a>
 
-                                    <a href="{{ route('motos.show', $moto->slug) }}" class="relative z-10 h-full w-full">
-                                        <img
-                                            src="{{ $moto->image ? Storage::url($moto->image) : asset('images/hero-moto.png') }}"
-                                            alt="{{ $moto->name }}"
-                                            class="h-full w-full object-contain p-6 transition duration-500 group-hover:scale-110">
+                                <div class="mt-5 grid grid-cols-3 gap-2 border-y border-slate-200 py-3 text-center">
+                                    <div>
+                                        <p class="text-[10px] font-bold uppercase tracking-wider text-tsm-muted">Année</p>
+                                        <p class="mt-1 text-sm font-extrabold text-tsm-dark">{{ $moto->year ?? '-' }}</p>
+                                    </div>
+
+                                    <div>
+                                        <p class="text-[10px] font-bold uppercase tracking-wider text-tsm-muted">CC</p>
+                                        <p class="mt-1 text-sm font-extrabold text-tsm-dark">{{ $moto->engine_cc ?? '-' }}</p>
+                                    </div>
+
+                                    <div>
+                                        <p class="text-[10px] font-bold uppercase tracking-wider text-tsm-muted">Km</p>
+                                        <p class="mt-1 text-sm font-extrabold text-tsm-dark">
+                                            {{ $moto->mileage ? number_format($moto->mileage, 0, ',', ' ') : '-' }}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="mt-5 flex items-center justify-between gap-4">
+                                    <div>
+                                        <p class="text-xs font-bold uppercase tracking-wider text-tsm-muted">Prix</p>
+                                        <p class="font-heading text-3xl font-extrabold text-tsm-navy">
+                                            {{ $moto->price ? number_format((float) $moto->price, 0, ',', ' ') . ' DH' : 'Sur demande' }}
+                                        </p>
+                                    </div>
+
+                                    <a
+                                        href="{{ route('motos.show', $moto->slug) }}"
+                                        class="rounded-full bg-tsm-navy px-5 py-3 text-xs font-extrabold uppercase tracking-wide text-white transition hover:bg-tsm-yellow hover:text-tsm-dark">
+                                        Voir la fiche
                                     </a>
                                 </div>
-
-                                <div class="p-5">
-                                    <div class="flex flex-wrap items-center gap-2 text-[11px] font-extrabold uppercase tracking-[0.22em] text-tsm-gold">
-                                        <span>{{ $moto->brand?->name ?? 'Marque' }}</span>
-                                        <span class="text-tsm-muted">/</span>
-                                        <span>{{ $moto->category?->name ?? 'Catégorie' }}</span>
-                                    </div>
-
-                                    <a href="{{ route('motos.show', $moto->slug) }}" class="group/title">
-                                        <h3 class="font-heading mt-2 min-h-[3rem] text-3xl font-extrabold uppercase leading-none text-tsm-dark transition group-hover/title:text-tsm-blue">
-                                            {{ $moto->name }}
-                                        </h3>
-                                    </a>
-
-                                    <div class="mt-5 grid grid-cols-3 gap-2 border-y border-slate-200 py-3 text-center">
-                                        <div>
-                                            <p class="text-[10px] font-bold uppercase tracking-wider text-tsm-muted">Année</p>
-                                            <p class="mt-1 text-sm font-extrabold text-tsm-dark">{{ $moto->year ?? '-' }}</p>
-                                        </div>
-
-                                        <div>
-                                            <p class="text-[10px] font-bold uppercase tracking-wider text-tsm-muted">CC</p>
-                                            <p class="mt-1 text-sm font-extrabold text-tsm-dark">{{ $moto->engine_cc ?? '-' }}</p>
-                                        </div>
-
-                                        <div>
-                                            <p class="text-[10px] font-bold uppercase tracking-wider text-tsm-muted">Km</p>
-                                            <p class="mt-1 text-sm font-extrabold text-tsm-dark">
-                                                {{ $moto->mileage ? number_format($moto->mileage, 0, ',', ' ') : '-' }}
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div class="mt-5 flex items-center justify-between gap-4">
-                                        <div>
-                                            <p class="text-xs font-bold uppercase tracking-wider text-tsm-muted">Prix</p>
-                                            <p class="font-heading text-3xl font-extrabold text-tsm-navy">
-                                                {{ $moto->price ? number_format((float) $moto->price, 0, ',', ' ') . ' DH' : 'Sur demande' }}
-                                            </p>
-                                        </div>
-
-                                        <a
-                                            href="{{ route('motos.show', $moto->slug) }}"
-                                            class="rounded-full bg-tsm-navy px-5 py-3 text-xs font-extrabold uppercase tracking-wide text-white transition hover:bg-tsm-yellow hover:text-tsm-dark">
-                                            Voir la fiche
-                                        </a>
-                                    </div>
-                                </div>
-                            </article>
+                            </div>
+                        </article>
                         @endforeach
                     </div>
 
